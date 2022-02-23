@@ -1,6 +1,6 @@
 {
   "name": "@ziminga/ztools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/ztools.cjs.js",
   "module": "lib/ztools.esm.js",
