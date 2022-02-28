@@ -1,4 +1,4 @@
-import Main from "../src/index";
+import Main from "../src";
 
 test("version is 0.0.1?", () => {
     const test = Main;

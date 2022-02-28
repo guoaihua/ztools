@@ -8,19 +8,19 @@ export default {
         typescript({
             exclude: "node_modules/**",
             typescript: require("typescript"),
-            tsconfig: './tsconfig.json'
-
+            tsconfig: './tsconfig.json',
+            declaration: false
         }),
         sourceMaps()
     ],
     output: [
         {
             format: 'cjs',
-            file: 'lib/ztools.cjs.js'
+            file: 'dist/index.cjs.js'
         },
         {
             format: 'es',
-            file: 'lib/ztools.esm.js'
+            file: 'dist/index.esm.js'
         }
     ]
 }

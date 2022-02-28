@@ -2,11 +2,13 @@
   "name": "@ziminga/ztools",
   "version": "1.0.1",
   "description": "",
-  "main": "lib/ztools.cjs.js",
-  "module": "lib/ztools.esm.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "test": "jest --no-cache"
+    "build:es": "rimraf ./dist && rollup -c",
+    "build:ts": "rimraf ./lib && tsc -p tsconfig.json",
+    "test": "jest --no-cache",
+    "build": "npm run build:es && npm run build:ts"
   },
   "keywords": [],
   "author": "ziming",
@@ -16,6 +18,7 @@
     "@types/jest": "^27.4.0",
     "axios": "^0.26.0",
     "jest": "^27.5.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.68.0",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "ts-jest": "^27.1.3",
