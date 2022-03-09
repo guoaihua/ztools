@@ -9,3 +9,6 @@ npm install @ziminga/ztools -D
 ```
 import { a } from '@ziminga/ztools'
 ```
+
+## doc
+[文档]()

@@ -6,10 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-color: green;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class='light'></div>
+    <!-- <script>
+                        
+                                var light_ele = document.querySelector('.light');
+                        
+                                const setLight = (color) => light_ele.style.backgroundColor = color
+            
+                    function Light() {
+                    this.green = 3;
+                    this.yellow = 1;
+                    this.red = 2;
+                    }
+                    
+                    Light.prototype.run = function () {
+                    new Promise((resolve) => {
+                    setLight('green');
+                    setTimeout(() => {
+                    console.log('green end')
+                    resolve()
+                    }
+                    , this.green * 1000)
+                    }).then((value) => {
+                    return new Promise((resolve) => {
+                    setLight('yellow');
+                    setTimeout(() => {
+                    console.log('yellow end')
+                    resolve()
+                    }, this.yellow * 1000)
+                    })
+                    }).then(() => {
+                    return new Promise((resolve) => {
+                    setLight('red');
+                    setTimeout(() => {
+                    console.log('red end')
+                    resolve()
+                    }, this.red * 2000)
+                    })
+                    }).then(() => {
+                    console.log('green start')
+                    this.run()
+                    })
+                    }
+                
+                let a = new Light()
+                a.run();
+                
+                </script> -->
+                
+                <script>
+                    var bigNumberADD = function (a, b) {
+                        if (parseInt(a).toString() !== a || parseInt(b).toString() !== b) {
+                            return '';
+                        }
+                        var maxLength = Math.max(a.length, b.length);
+                        var temp1 = a.padStart(maxLength, '0');
+                        var temp2 = b.padStart(maxLength, '0');
+                        var sum = '';
+                        var f = 0;
+                        for (var i = maxLength - 1; i >= 0; i--) {
+                            sum = (parseInt(temp1[i]) + parseInt(temp2[i]) + f) % 10 + sum;
+                            f = Math.floor((parseInt(temp1[i]) + parseInt(temp2[i]) + f) / 10);
+                        }
+                        if (f) {
+                            sum = "1" + sum;
+                        }
+                        return sum;
+                    };
+                    console.log(bigNumberADD("9007199254740991", "1234567899999999999"))
+                </script>
 </body>
 
 </html>
