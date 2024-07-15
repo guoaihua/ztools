@@ -1,18 +1,20 @@
 
 import typescript from "@rollup/plugin-typescript";
 import sourceMaps from "rollup-plugin-sourcemaps";
+const html = require('@rollup/plugin-html');
+
 
 export default {
     input: 'src/index.ts',
     plugins: [
-
         typescript({
             exclude: "node_modules/**",
             typescript: require("typescript"),
             tsconfig: './tsconfig.json',
             declaration: false
         }),
-        sourceMaps()
+        sourceMaps(),
+        html()
     ],
     output: [
         {
