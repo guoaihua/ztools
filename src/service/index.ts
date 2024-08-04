@@ -27,6 +27,9 @@ export async function tryCatch<T, E = Error>(promise: Promise<T> | T): Promise<[
     }
 }
 
+
+
 export function requestApi<T>(axiosConfig: AxiosRequestConfig) {
     return tryCatch<T, AxiosError>(http(axiosConfig).then(res => res.data))
 }
+
