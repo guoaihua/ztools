@@ -24,8 +24,16 @@ type ExcludeObjProps<T extends object, K extends string> = {
 type CheckRepeatedTuple<T extends any[]> =  T extends [infer F, ...infer R] ? F extends R[number] ? true : CheckRepeatedTuple<R> : false
 
 
-
-/** 合并两个对象 */
-type Merge<T extends {}, K extends {}> = {
-    [key in keyof T | keyof K]: key extends keyof T ? T [key] : key extends keyof K ? K[key] : never
+type Merge<O1, O2> = {
+    [key in keyof O1 | keyof O2]: PropOr<O1, key> | PropOr<O2, key>;
 }
+
+
+type PropOr<Obj, Prop> = Prop extends keyof Obj
+  ? Obj[Prop]
+  : never
+
+
+type MergeAll<T extends {}[], Prev extends {} =T > = T extends [infer F, ...infer R extends {}[]] ? MergeAll<R, Merge<F, Prev>> : Prev
+
+ 
