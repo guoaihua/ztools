@@ -1,7 +1,10 @@
 
-import typescript from "@rollup/plugin-typescript";
+import typescript  from "@rollup/plugin-typescript";
 import sourceMaps from "rollup-plugin-sourcemaps";
-import html from 'rollup-plugin-html2';
+import html from '@rollup/plugin-html';
+import * as ty from "typescript";
+
+
 import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
 
@@ -14,7 +17,7 @@ export default {
         }),
         typescript({
             exclude: "node_modules/**",
-            typescript: require("typescript"),
+            typescript: ty,
             tsconfig: './tsconfig.json',
             declaration: false
         }),

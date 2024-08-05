@@ -4,7 +4,7 @@
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "module": "es",
+  "type": "module",
   "scripts": {
     "dev": "rimraf ./dist && rollup -c rollup.dev.config.js",
     "build:all": "rimraf ./dist && rollup -c",
@@ -18,8 +18,11 @@
   "devDependencies": {
     "@rollup/plugin-html": "^1.0.3",
     "@rollup/plugin-typescript": "^11.1.6",
+    "assert-ts": "^0.3.4",
     "rimraf": "4",
     "rollup": "^4.18.1",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^1.1.1",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "typescript": "^5.5.3"
   }

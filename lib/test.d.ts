@@ -4,4 +4,4 @@ interface TEST {
     c?: boolean;
     d?: any;
 }
-declare var a: TEST;
+

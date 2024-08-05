@@ -16,9 +16,13 @@ interface Todo {
       title: 'Clean room',
       completed: false,
   }
-
-  type cc = Pick<>
-
-
-
   
+type Item = 'semlinker,lolo,kakuqo';
+
+type Split<
+	T extends string, 
+	Delimiter extends string,
+> = T extends `${infer F}${Delimiter}${infer K}` ? [F, ...Split<K, Delimiter>] : [T]     
+
+type ElementType = Split<Item, ','>; // ["semlinker", "lolo", "kakuqo"]
+
